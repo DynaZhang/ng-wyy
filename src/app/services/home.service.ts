@@ -15,7 +15,7 @@ export class HomeService {
   constructor(private http: HttpClient, @Inject(API_CONFIG) private baseUrl: string) { }
 
   getBanners(): Observable<Banner[]> {
-    return this.http.get(`${this.baseUrl}banner`)
+    return this.http.get(`${this.baseUrl}/banner`)
       .pipe(map((res: {banners: Banner[]}) => res.banners));
   }
 }
